@@ -30,22 +30,19 @@ const NavItems = styled.ul`
   gap: 32px;
 
   li {
-    .underline-animation {
-      display: inline-block;
-      position: relative;
+    position: relative;
 
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: ${(props) => props.theme.colors.white};
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: ${(props) => props.theme.colors.white};
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
     }
 
     &:hover {
