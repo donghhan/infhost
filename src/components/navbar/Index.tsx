@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Layout from "../Layout";
 import MainNavBar from "./MainNavBar";
+import SubNavBar from "./SubNavBar";
 
 export default function Navbar() {
   return (
     <>
       <MainNavBar />
+      <SubNavBar />
     </>
   );
 }

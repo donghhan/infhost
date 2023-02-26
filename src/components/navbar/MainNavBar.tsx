@@ -1,9 +1,26 @@
+import { useState } from "react";
 import styled from "styled-components";
-import Layout from "../Layout";
+import { HamburgerMenu, HamburgerButton } from "./hamburger";
 import { Link } from "react-router-dom";
 import { logo } from "../../assets";
+import { device } from "../../styles/breakpoints";
 
 const MainNavBarSection = styled.section`
+  @media screen and ${device.mobileS} {
+    padding: 0 30px;
+  }
+  @media screen and ${device.tablet} {
+    padding: 0 30px;
+  }
+
+  @media screen and ${device.laptop} {
+    padding: 0 100px;
+  }
+
+  @media screen and ${device.desktop} {
+    padding: 0 200px;
+  }
+
   width: 100vw;
   height: 80px;
   display: flex;
@@ -11,10 +28,15 @@ const MainNavBarSection = styled.section`
   align-items: center;
   background-color: ${(props) => props.theme.colors.purple};
   color: ${(props) => props.theme.colors.white};
-  padding: 0 10%;
 `;
 
 const Logo = styled(Link)`
+  @media screen and ${device.mobileS} {
+    span {
+      font-size: 18px;
+    }
+  }
+
   display: flex;
   align-items: center;
 
@@ -26,6 +48,16 @@ const Logo = styled(Link)`
 `;
 
 const NavItems = styled.ul`
+  @media screen and ${device.mobileS} {
+    display: none;
+  }
+
+  @media screen and ${device.tablet} {
+    display: flex;
+    font-size: 15px;
+    gap: 25px;
+  }
+
   display: flex;
   gap: 32px;
 
@@ -55,9 +87,17 @@ const NavItems = styled.ul`
 `;
 
 const MyAccountButton = styled(Link)`
+  @media screen and ${device.mobileS} {
+    display: none;
+  }
+
+  @media screen and ${device.tablet} {
+    display: block;
+    padding: 10px 20px;
+  }
+
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
-  padding: 16px 24px;
   background-position: center;
   transition: background 250ms;
 
@@ -80,12 +120,19 @@ const MyAccountButton = styled(Link)`
 `;
 
 export default function MainNavBar() {
+  const [open, setOpen] = useState<boolean>(false);
+  console.log(open);
+
   return (
     <MainNavBarSection>
       <Logo to="/">
         <img src={logo} alt="Logo" />
         <span>InfHost</span>
       </Logo>
+      <>
+        {/* <HamburgerButton open={open} setOpen={setOpen} /> */}
+        <HamburgerMenu open={open} />
+      </>
       <NavItems>
         <li>
           <Link className="underline-animation" to="/">
