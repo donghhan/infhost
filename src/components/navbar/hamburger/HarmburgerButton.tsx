@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import { HamburgerProp } from "./hamburgerInterface";
+import { StyledHamburgerBtnProp, HamburgerMenuProp } from "./interface";
+import { device } from "../../../styles/breakpoints";
 
-interface IHamburgerButton {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
-
-const StyledHamburgerBtn = styled.div<HamburgerProp>`
+const StyledHamburgerBtn = styled.div<StyledHamburgerBtnProp>`
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  z-index: 10;
 
   div {
     width: 100%;
@@ -37,9 +34,13 @@ const StyledHamburgerBtn = styled.div<HamburgerProp>`
       background-color: ${(props) => props.theme.colors.lightgray};
     }
   }
+
+  @media screen and ${device.tablet} {
+    display: none;
+  }
 `;
 
-export default function HamburgerButton({ open, setOpen }: IHamburgerButton) {
+export default function HamburgerButton({ open, setOpen }: HamburgerMenuProp) {
   return (
     <StyledHamburgerBtn open={open} onClick={() => setOpen(!open)}>
       <div />

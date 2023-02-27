@@ -121,7 +121,6 @@ const MyAccountButton = styled(Link)`
 
 export default function MainNavBar() {
   const [open, setOpen] = useState<boolean>(false);
-  console.log(open);
 
   return (
     <MainNavBarSection>
@@ -130,8 +129,8 @@ export default function MainNavBar() {
         <span>InfHost</span>
       </Logo>
       <>
-        {/* <HamburgerButton open={open} setOpen={setOpen} /> */}
-        <HamburgerMenu open={open} />
+        <HamburgerButton open={open} setOpen={setOpen} />
+        <HamburgerMenu open={open} setOpen={setOpen} />
       </>
       <NavItems>
         <li>
