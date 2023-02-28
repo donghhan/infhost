@@ -19,6 +19,20 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    input {
+        border: transparent; 
+        font-family: ${(props) => props.theme.fonts.prompt}
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        border: transparent;
+        cursor: pointer;
+    }
+
     ul, li {
         list-style: none;
     }
