@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { StyledHamburgerBtnProp, HamburgerMenuProp } from "./interface";
 import { Link } from "react-router-dom";
-import { device } from "../../../styles/breakpoints";
+import { breakpoint } from "../../../styles/breakpoints";
 
 const HamburgerMenuWrapper = styled.article<StyledHamburgerBtnProp>`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     position: fixed;
     top: 0;
     right: 0;
@@ -19,11 +19,7 @@ const HamburgerMenuWrapper = styled.article<StyledHamburgerBtnProp>`
     transform: ${({ open }) => (open ? "translateX(0)" : "translate(100%)")};
     transition: transform 250ms ease-in-out;
     background-color: ${(props) => props.theme.colors.deepPurple};
-  }
-
-  @media screen and ${device.tablet} {
-    display: none;
-  }
+  `}
 `;
 
 const HamburgerMenuText = styled.span`

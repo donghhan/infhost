@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { StyledHamburgerBtnProp, HamburgerMenuProp } from "./interface";
-import { device } from "../../../styles/breakpoints";
+import { breakpoint } from "../../../styles/breakpoints";
 
 const StyledHamburgerBtn = styled.div<StyledHamburgerBtnProp>`
   width: 30px;
@@ -35,9 +35,9 @@ const StyledHamburgerBtn = styled.div<StyledHamburgerBtnProp>`
     }
   }
 
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     display: none;
-  }
+  `}
 `;
 
 export default function HamburgerButton({ open, setOpen }: HamburgerMenuProp) {

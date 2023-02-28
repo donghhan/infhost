@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { device } from "../../styles/breakpoints";
+import { breakpoint } from "../../styles/breakpoints";
 
 const SubNavbarSection = styled.div`
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     padding: 0 30px;
-  }
+  `}
 
-  @media screen and ${device.laptop} {
+  ${breakpoint.laptop`
     padding: 0 100px;
-  }
+  `}
 
-  @media screen and ${device.desktop} {
+  ${breakpoint.desktop`
     padding: 0 200px;
-  }
+  `}
 
   width: 100%;
   height: 40px;
@@ -28,28 +28,28 @@ const SubNavbarSection = styled.div`
 `;
 
 const SubtextWrapper = styled.div`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     width: 100%;
     display: flex;
     justify-content: center;
     font-size: 12.5px;
-  }
+  `}
 
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     display: inline-block;
     font-size: 15px;
-  }
+  `}
 `;
 
 const SubMenuList = styled.ul`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     display: none;
-  }
+  `}
 
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     display: flex;
     font-size: 15px;
-  }
+  `}
 
   display: flex;
   gap: 32px;

@@ -3,23 +3,20 @@ import styled from "styled-components";
 import { HamburgerMenu, HamburgerButton } from "./hamburger";
 import { Link } from "react-router-dom";
 import { logo } from "../../assets";
-import { device } from "../../styles/breakpoints";
+import { breakpoint } from "../../styles/breakpoints";
 
 const MainNavBarSection = styled.section`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     padding: 0 30px;
-  }
-  @media screen and ${device.tablet} {
-    padding: 0 30px;
-  }
+  `}
 
-  @media screen and ${device.laptop} {
+  ${breakpoint.laptop`
     padding: 0 100px;
-  }
+  `}
 
-  @media screen and ${device.desktop} {
-    padding: 0 200px;
-  }
+  ${breakpoint.desktop`
+    padding: 0 200px;/
+  `}
 
   width: 100vw;
   height: 80px;
@@ -31,11 +28,11 @@ const MainNavBarSection = styled.section`
 `;
 
 const Logo = styled(Link)`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     span {
       font-size: 18px;
     }
-  }
+  `}
 
   display: flex;
   align-items: center;
@@ -48,15 +45,15 @@ const Logo = styled(Link)`
 `;
 
 const NavItems = styled.ul`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     display: none;
-  }
+  `}
 
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     display: flex;
     font-size: 15px;
     gap: 25px;
-  }
+  `}
 
   display: flex;
   gap: 32px;
@@ -87,14 +84,14 @@ const NavItems = styled.ul`
 `;
 
 const MyAccountButton = styled(Link)`
-  @media screen and ${device.mobileS} {
+  ${breakpoint.mobileS`
     display: none;
-  }
+  `}
 
-  @media screen and ${device.tablet} {
+  ${breakpoint.tablet`
     display: block;
     padding: 10px 20px;
-  }
+  `}
 
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
