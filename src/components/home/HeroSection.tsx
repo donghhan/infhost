@@ -6,6 +6,7 @@ import { breakpoint } from "../../styles/breakpoints";
 
 const HeroSectionWrapper = styled.section`
   ${breakpoint.mobileS`
+    min-height: 100vh;
     padding: 0 30px;
   `}
 
@@ -13,15 +14,16 @@ const HeroSectionWrapper = styled.section`
     padding: 0 100px;
   `}
 
+
   ${breakpoint.desktop`
     padding: 0 200px;/
   `}
 
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: ${(props) => props.theme.colors.deepPurple};
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   background-image: url("data:image/svg+xml,%3Csvg width='1388' height='139' viewBox='0 0 1388 139' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 259.533L80 201.533C160 144.533 320 28.5326 480 28.5326C640 28.5326 800 144.533 960 134.533C1120 124.533 1280 -9.46737 1440 0.532634C1600 9.53263 1760 163.533 1840 240.533L1920 316.533V374.533H1840C1760 374.533 1600 374.533 1440 374.533C1280 374.533 1120 374.533 960 374.533C800 374.533 640 374.533 480 374.533C320 374.533 160 374.533 80 374.533H0V259.533Z' fill='url(%23paint0_linear_1_31393)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1_31393' x1='-5.7615e-06' y1='184.092' x2='1920' y2='184.092' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FC4E58'/%3E%3Cstop offset='1' stop-color='%23FFD965'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
@@ -54,28 +56,65 @@ const HeroSectionWrapper = styled.section`
   }
 `;
 
+const HeroContentWrapper = styled.div`
+  ${breakpoint.mobileS`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  `}
+
+  ${breakpoint.laptop`
+    flex-direction: row;
+    text-align: inherit;
+  `}
+
+  width: 100%;
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const HeroTextWrapper = styled.div`
-  max-width: 700px;
+  ${breakpoint.tablet`
+    max-width: 100%;
+  `}
+
+  border: 1px solid blue;
+  max-width: 45%;
+  z-index: 100;
 
   h1 {
-    font-size: 80px;
+    ${breakpoint.tablet`
+      font-size: 50px;
+    `}
+
+    font-size: 4vw;
     line-height: 1.25;
     color: ${(props) => props.theme.colors.white};
     margin-bottom: 40px;
   }
 
   h2 {
+    ${breakpoint.tablet`
+      font-size: 20px;
+    `}
+
     font-weight: 400;
     color: ${(props) => props.theme.colors.lightgray};
     margin-bottom: 40px;
-    font-size: 18px;
+    font-size: 1vw;
   }
 
   span {
+    ${breakpoint.tablet`
+      font-size: 18px;
+    `}
+
     display: inline-block;
     margin-top: 40px;
     color: ${(props) => props.theme.colors.white};
-    font-size: 16px;
+    font-size: 1vw;
   }
 `;
 
@@ -83,6 +122,11 @@ const HeroTextForm = styled.form`
   height: 65px;
 
   input {
+    ${breakpoint.laptop`
+      width: 250px;
+      padding-left: 10px;
+    `}
+
     width: 330px;
     height: 100%;
     padding-left: 30px;
@@ -96,9 +140,13 @@ const HeroTextForm = styled.form`
   }
 
   button {
+    ${breakpoint.laptop`
+      width: 100px;
+    `}
+
     width: 130px;
     height: 100%;
-    margin-left: 15px;
+    margin-left: 5px;
     font-size: 16px;
     background-color: ${(props) => props.theme.colors.blue};
     color: ${(props) => props.theme.colors.white};
@@ -107,33 +155,48 @@ const HeroTextForm = styled.form`
 `;
 
 const HeroImageWrapper = styled.div`
-  position: absolute;
-  right: 200px;
+  ${breakpoint.laptop`
+    text-align: right;
+  `}
+
+  max-width: 800px;
+  height: 500px;
+  z-index: 50;
+  border: 1px solid red;
+
+  img {
+    ${breakpoint.laptop`
+      width: 100%;
+    `}
+    width: 90%;
+  }
 `;
 
 export default function HeroSection() {
   return (
     <HeroSectionWrapper>
-      <HeroTextWrapper>
-        <h1>Success starts with the domain</h1>
-        <h2>A catchy and inventive domain is the basis of success!</h2>
-        <HeroTextForm>
-          <input type="text" placeholder="Search for an ingenious domain" />
-          <button>
-            Search
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              style={{ marginLeft: "10px" }}
-            />
-          </button>
-        </HeroTextForm>
-        <span>
-          Starting from <b>$24.99/year</b>
-        </span>
-      </HeroTextWrapper>
-      <HeroImageWrapper>
-        <img src={hero} alt="Hero Image" />
-      </HeroImageWrapper>
+      <HeroContentWrapper>
+        <HeroTextWrapper>
+          <h1>Success starts with the domain</h1>
+          <h2>A catchy and inventive domain is the basis of success!</h2>
+          <HeroTextForm>
+            <input type="text" placeholder="Search for an ingenious domain" />
+            <button>
+              Search
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                style={{ marginLeft: "10px" }}
+              />
+            </button>
+          </HeroTextForm>
+          <span>
+            Starting from <b>$24.99/year</b>
+          </span>
+        </HeroTextWrapper>
+        <HeroImageWrapper>
+          <img src={hero} alt="Hero Image" />
+        </HeroImageWrapper>
+      </HeroContentWrapper>
     </HeroSectionWrapper>
   );
 }
