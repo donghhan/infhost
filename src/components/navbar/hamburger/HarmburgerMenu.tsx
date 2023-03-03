@@ -5,6 +5,7 @@ import { breakpoint } from "../../../styles/breakpoints";
 
 const HamburgerMenuWrapper = styled.article<StyledHamburgerBtnProp>`
   ${breakpoint.mobileS`
+    z-index: 500;
     position: fixed;
     top: 0;
     right: 0;

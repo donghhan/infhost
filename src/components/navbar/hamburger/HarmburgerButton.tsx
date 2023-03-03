@@ -8,7 +8,7 @@ const StyledHamburgerBtn = styled.div<StyledHamburgerBtnProp>`
   display: flex;
   align-items: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 600;
 
   div {
     width: 100%;

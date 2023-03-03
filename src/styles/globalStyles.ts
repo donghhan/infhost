@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    span {
+        display: inline-block;
+    }
+
     input {
         border: transparent; 
         font-family: ${(props) => props.theme.fonts.prompt}

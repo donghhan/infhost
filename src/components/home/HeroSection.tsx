@@ -70,23 +70,34 @@ const HeroContentWrapper = styled.div`
   `}
 
   width: 100%;
-  border: 1px solid green;
   display: flex;
   justify-content: space-between;
 `;
 
 const HeroTextWrapper = styled.div`
-  ${breakpoint.tablet`
+  ${breakpoint.mobileS`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
     max-width: 100%;
   `}
 
-  border: 1px solid blue;
+  ${breakpoint.tablet`
+    max-width: 600px;
+    align-items: flex-start;
+  `}
+
   max-width: 45%;
   z-index: 100;
 
   h1 {
+    ${breakpoint.mobileS`
+      font-size: 40px;
+    `}
+
     ${breakpoint.tablet`
-      font-size: 50px;
+      font-size: 60px;
     `}
 
     font-size: 4vw;
@@ -96,8 +107,14 @@ const HeroTextWrapper = styled.div`
   }
 
   h2 {
+    ${breakpoint.mobileS`
+      max-width: 80%;
+      font-size: 15px;
+    `}
+
     ${breakpoint.tablet`
       font-size: 20px;
+      text-align: inherit;
     `}
 
     font-weight: 400;
@@ -107,12 +124,17 @@ const HeroTextWrapper = styled.div`
   }
 
   span {
+    ${breakpoint.mobileS`
+      font-size: 18px;
+      margin-top: 40px;
+    `}
+
     ${breakpoint.tablet`
       font-size: 18px;
     `}
 
     display: inline-block;
-    margin-top: 40px;
+    padding-top: 40px;
     color: ${(props) => props.theme.colors.white};
     font-size: 1vw;
   }
@@ -122,30 +144,66 @@ const HeroTextForm = styled.form`
   height: 65px;
 
   input {
+    ${breakpoint.mobileS`
+      width: 100%;
+      height: 40px;  
+      padding-left: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    `}
+
+    ${breakpoint.tablet`
+      width: 100%;
+      height: 55px;
+    `}
+
     ${breakpoint.laptop`
       width: 250px;
       padding-left: 10px;
+      text-align: left;
+      padding-left: 30px;
     `}
 
-    width: 330px;
+    ${breakpoint.desktop`
+      width: 330px;
+    `}
+
     height: 100%;
-    padding-left: 30px;
     color: ${(props) => props.theme.colors.lightgray};
     border-radius: 4px;
 
     &::placeholder {
+      ${breakpoint.mobileS`
+        text-align: center;
+        font-size: 11.5px;
+      `}
+
+      ${breakpoint.laptop`
+        text-align: left;
+      `}
+
       font-size: 14px;
       color: ${(props) => props.theme.colors.lightgray};
     }
   }
 
   button {
+    ${breakpoint.mobileS`
+      height: 40px;
+    `}
+
+    ${breakpoint.tablet`
+      height: 55px;
+    `}
+
     ${breakpoint.laptop`
       width: 100px;
     `}
 
-    width: 130px;
-    height: 100%;
+    ${breakpoint.desktop`
+      width: 130px;
+    `}
+
     margin-left: 5px;
     font-size: 16px;
     background-color: ${(props) => props.theme.colors.blue};
@@ -162,7 +220,6 @@ const HeroImageWrapper = styled.div`
   max-width: 800px;
   height: 500px;
   z-index: 50;
-  border: 1px solid red;
 
   img {
     ${breakpoint.laptop`
