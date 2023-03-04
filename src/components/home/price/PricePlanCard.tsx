@@ -1,48 +1,94 @@
-import styled from "styled-components";
 import { breakpoint } from "../../../styles/breakpoints";
-import { frame } from "../../../assets/home/price";
+import { frame, wordPress, check } from "../../../assets/home/price";
+import {
+  CardWrapper,
+  PlanWrapper,
+  Border,
+  PerkList,
+  Card,
+  StyledLink,
+} from "./PricePlanCard.style";
+import PerkOptions from "./PerkOptions";
+import { PerkOptionBox } from "./PerkOptions.style";
 
-const CardWrapper = styled.div`
-  width: 360px;
-  border-radius: 4px;
-  box-shadow: 0px 2px 16px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-`;
-
-const PlanWrapper = styled.div`
-  position: relative;
-
-  img {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  h1 {
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .from {
-    color: ${(props) => props.theme.colors.lightgray};
-    margin-bottom: 15px;
-  }
-
-  .price {
-    font-size: 48px;
-    font-weight: 600;
-  }
-`;
+const options = [
+  {
+    key: "wwwHosting",
+    title: "WWW Hosting",
+    price: "$19.99",
+    icon: frame,
+    perks: [
+      <li>
+        High-performance <b>SSD NVMe</b>
+      </li>,
+      <li>
+        Access to the <b>SSH console</b>
+      </li>,
+      <li>
+        <b>E-mail</b> boxes in your own domain
+      </li>,
+      <li>
+        Manageable <b>backup</b>
+      </li>,
+      <li>
+        <b>Autoinstaller</b> of popular applications
+      </li>,
+      <li>
+        Support for <b>multiple PHP languages</b>
+      </li>,
+    ],
+  },
+  {
+    key: "wordpressHosting",
+    title: "Hosting WordPress",
+    price: "$39.99",
+    icon: wordPress,
+    perks: [
+      <li>
+        High-performance <b>SSD NVMe</b>
+      </li>,
+      <li>
+        Free <b>WordPress Autoinstaller</b>
+      </li>,
+      <li>
+        Advanced <b>backup</b> via FTP and SSH
+      </li>,
+      <li>
+        <b>Technical support</b> assistance
+      </li>,
+      <li>
+        Increased <b>WordPress Hosting</b> parameters
+      </li>,
+      <li>
+        The latest <b>PHP 7.x + OPcache</b>
+      </li>,
+    ],
+  },
+];
 
 export default function PriceCard() {
   return (
     <CardWrapper>
-      <PlanWrapper>
-        <img src={frame} alt="Plan Icon" />
-        <h1>WWW Hosting</h1>
-        <span className="from">From:</span>
-        <div className="price">$19.99</div>
-      </PlanWrapper>
+      {options.map((i) => (
+        <Card key={i.key}>
+          <PlanWrapper>
+            <img src={i.icon} alt="Plan Icon" />
+            <h1>{i.title}</h1>
+            <span className="from">From: </span>
+            <span className="price">{i.price}</span>
+          </PlanWrapper>
+          <Border />
+          <PerkList>
+            {i.perks.map((perk, index) => (
+              <div style={{ display: "flex" }}>
+                <img src={check} alt="Check" style={{ marginRight: "10px" }} />
+                {perk}
+              </div>
+            ))}
+          </PerkList>
+          <StyledLink to="/">Check the offer</StyledLink>
+        </Card>
+      ))}
     </CardWrapper>
   );
 }

@@ -1,9 +1,23 @@
 import styled from "styled-components";
 import PriceCard from "./price/PricePlanCard";
+import PerkOptions from "./price/PerkOptions";
+import { breakpoint } from "../../styles/breakpoints";
 
 const PriceSectionWrapper = styled.section`
+  ${breakpoint.mobileS`
+    padding: 100px 50px;
+  `}
+
+  ${breakpoint.tablet`
+    padding: 100px;
+  `}
+
+  ${breakpoint.laptop`
+    padding: 150px;
+  `}
+
   width: 100%;
-  height: 100vh;
+  padding: 150px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,6 +37,7 @@ const PriceTextWrapper = styled.div`
 
   span {
     color: ${(props) => props.theme.colors.lightgray};
+    line-height: 2;
   }
 `;
 
@@ -38,9 +53,8 @@ export default function PriceSection() {
           Internet.
         </span>
       </PriceTextWrapper>
-      <>
-        <PriceCard />
-      </>
+      <PriceCard />
+      <PerkOptions />
     </PriceSectionWrapper>
   );
 }

@@ -61,6 +61,10 @@ const NavItems = styled.ul`
   li {
     position: relative;
 
+    a {
+      color: ${(props) => props.theme.colors.white};
+    }
+
     &:after {
       content: "";
       position: absolute;
