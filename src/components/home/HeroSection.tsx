@@ -84,7 +84,7 @@ const HeroTextWrapper = styled.div`
   `}
 
   ${breakpoint.tablet`
-    max-width: 600px;
+    max-width: 700px;
     align-items: flex-start;
   `}
 
@@ -100,7 +100,10 @@ const HeroTextWrapper = styled.div`
       font-size: 60px;
     `}
 
-    font-size: 4vw;
+    ${breakpoint.laptop`
+      font-size: 80px;
+    `}
+
     line-height: 1.25;
     color: ${(props) => props.theme.colors.white};
     margin-bottom: 40px;
@@ -125,12 +128,16 @@ const HeroTextWrapper = styled.div`
 
   span {
     ${breakpoint.mobileS`
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 40px;
     `}
 
     ${breakpoint.tablet`
-      font-size: 18px;
+      font-size: 16px;
+    `}
+
+    ${breakpoint.laptop`
+      font-size: 16px;
     `}
 
     display: inline-block;
@@ -159,6 +166,7 @@ const HeroTextForm = styled.form`
 
     ${breakpoint.laptop`
       width: 250px;
+      height: 65px;
       padding-left: 10px;
       text-align: left;
       padding-left: 30px;
@@ -175,7 +183,7 @@ const HeroTextForm = styled.form`
     &::placeholder {
       ${breakpoint.mobileS`
         text-align: center;
-        font-size: 11.5px;
+        font-size: 14px;
       `}
 
       ${breakpoint.laptop`
@@ -198,13 +206,14 @@ const HeroTextForm = styled.form`
 
     ${breakpoint.laptop`
       width: 100px;
+      height: 65px;
     `}
 
     ${breakpoint.desktop`
       width: 130px;
+      margin-left: 15px;
     `}
 
-    margin-left: 5px;
     font-size: 16px;
     background-color: ${(props) => props.theme.colors.blue};
     color: ${(props) => props.theme.colors.white};
