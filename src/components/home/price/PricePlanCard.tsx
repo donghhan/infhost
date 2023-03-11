@@ -1,4 +1,4 @@
-import { breakpoint } from "../../../styles/breakpoints";
+import { breakpoint } from "../../../styles/global/breakpoints";
 import { frame, wordPress, check } from "../../../assets/home/price";
 import {
   CardWrapper,

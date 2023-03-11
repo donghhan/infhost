@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { breakpoint } from "../../styles/breakpoints";
+import { breakpoint } from "../../styles/global/breakpoints";
 
 const SubNavbarSection = styled.div`
   ${breakpoint.tablet`

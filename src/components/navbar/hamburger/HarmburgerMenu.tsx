@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StyledHamburgerBtnProp, HamburgerMenuProp } from "./interface";
 import { Link } from "react-router-dom";
-import { breakpoint } from "../../../styles/breakpoints";
+import { breakpoint } from "../../../styles/global/breakpoints";
 
 const HamburgerMenuWrapper = styled.article<StyledHamburgerBtnProp>`
   ${breakpoint.mobileS`

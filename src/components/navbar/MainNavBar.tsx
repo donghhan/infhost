@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HamburgerMenu, HamburgerButton } from "./hamburger";
 import { Link } from "react-router-dom";
 import { logo } from "../../assets";
-import { breakpoint } from "../../styles/breakpoints";
+import { breakpoint } from "../../styles/global/breakpoints";
 
 const MainNavBarSection = styled.section`
   ${breakpoint.mobileS`

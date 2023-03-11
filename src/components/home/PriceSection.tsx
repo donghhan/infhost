@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PriceCard from "./price/PricePlanCard";
 import PerkOptions from "./price/PerkOptions";
-import { breakpoint } from "../../styles/breakpoints";
+import { breakpoint } from "../../styles/global/breakpoints";
 
 const PriceSectionWrapper = styled.section`
   ${breakpoint.mobileS`

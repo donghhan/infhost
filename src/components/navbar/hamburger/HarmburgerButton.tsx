@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { StyledHamburgerBtnProp, HamburgerMenuProp } from "./interface";
-import { breakpoint } from "../../../styles/breakpoints";
+import { breakpoint } from "../../../styles/global/breakpoints";
 
 const StyledHamburgerBtn = styled.div<StyledHamburgerBtnProp>`
   width: 30px;
