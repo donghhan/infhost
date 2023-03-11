@@ -1,4 +1,3 @@
-import { breakpoint } from "../../../styles/global/breakpoints";
 import { frame, wordPress, check } from "../../../assets/home/price";
 import {
   CardWrapper,
@@ -7,9 +6,7 @@ import {
   PerkList,
   Card,
   StyledLink,
-} from "./PricePlanCard.style";
-import PerkOptions from "./PerkOptions";
-import { PerkOptionBox } from "./PerkOptions.style";
+} from "../../../styles/home/price/PricePlanCard.style";
 
 const options = [
   {

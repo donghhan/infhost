@@ -1,10 +1,20 @@
 import styled from "styled-components";
+import { breakpoint } from "../../global/breakpoints";
 
 const PerkOptionWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 70px;
-  width: 100%;
+  ${breakpoint.mobileS`
+    display: grid;
+    grid-template-column: 1fr;
+    gap: 30px;
+    margin-top: 50px;
+  `}
+
+  ${breakpoint.tablet`
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 70px;
+    width: 100%;
+  `}
 `;
 
 const PerkOptionBox = styled.div`

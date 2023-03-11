@@ -1,17 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { breakpoint } from "../../global/breakpoints";
 
 const CardWrapper = styled.div`
-  display: flex;
-  gap: 30px;
+  ${breakpoint.mobileS`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  `}
+
+  ${breakpoint.laptop`
+    display: flex;
+    gap: 30px;
+  `}
 `;
 
 const Card = styled.div`
-  width: 360px;
+  max-width: 360px;
   min-height: 600px;
   border-radius: 4px;
   box-shadow: 0px 2px 16px 10px rgba(126, 126, 126, 0.1);
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 `;
 
 const PlanWrapper = styled.div`
@@ -49,6 +61,9 @@ const Border = styled.hr`
 `;
 
 const PerkList = styled.ul`
+  height: fit-content;
+  min-height: 300px;
+
   li {
     margin: 10px 0;
     font-size: 14px;

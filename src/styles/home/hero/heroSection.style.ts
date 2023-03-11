@@ -92,13 +92,21 @@ const HeroTextWrapper = styled.div`
 
 const HeroTextTitle = styled.h1`
   ${breakpoint.mobileS`
-    font-size: 60px;
+    font-size: 40px;
     max-width: 500px;
+  `}
+
+  ${breakpoint.mobileM`
+    font-size: 50px;
+    max-width: 700px;
+  `}
+
+  ${breakpoint.mobileL`
+    font-size: 60px;
   `}
 
   ${breakpoint.tablet`
     font-size: 80px;
-    max-width: 700px;
   `}
 
   ${breakpoint.desktop`
@@ -149,7 +157,12 @@ const HeroInput = styled.input`
   ${breakpoint.mobileS`
     text-align: center;
     height: 55px;
+    width: 250px;
 `}
+
+  ${breakpoint.mobileM`
+    width: 330px;
+  `}
 
   ${breakpoint.tablet`
     height: 65px;
@@ -157,8 +170,6 @@ const HeroInput = styled.input`
     text-align: left;
   `}
 
-  width: 330px;
-  height: 100%;
   color: ${(props) => props.theme.colors.lightgray};
   border-radius: 4px;
 `;

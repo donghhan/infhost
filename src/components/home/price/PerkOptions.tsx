@@ -1,4 +1,7 @@
-import { PerkOptionBox, PerkOptionWrapper } from "./PerkOptions.style";
+import {
+  PerkOptionBox,
+  PerkOptionWrapper,
+} from "../../../styles/home/price/PerkOptions.style";
 import { backup, comprehensive, exceptional } from "../../../assets/home/price";
 
 const perkOptions = [
