@@ -15,7 +15,7 @@ const HamburgerMenuWrapper = styled.article<StyledHamburgerBtnProp>`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 30px 5% 0;
+    padding: 50px 5% 0;
     font-size: 20px;
     transform: ${({ open }) => (open ? "translateX(0)" : "translate(100%)")};
     transition: transform 250ms ease-in-out;

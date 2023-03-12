@@ -15,5 +15,6 @@ export const theme: DefaultTheme = {
     purple: "#31294c",
     lightPurple: "#564986",
     lightgray: "#aea5bf",
+    ghostWhite: "#F0F7FF",
   },
 };

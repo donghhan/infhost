@@ -22,6 +22,7 @@ const PriceSectionWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ${(props) => props.theme.colors.ghostWhite};
 `;
 
 const PriceTextWrapper = styled.div`
