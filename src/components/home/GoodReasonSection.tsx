@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { rocketMan } from "../../assets/home/goodReason";
+import { illustration } from "../../assets/home";
 import GoodReasonCard from "./goodReason/GoodReasonCard";
 import {
   GoodReasonSectionWrapper,
@@ -9,6 +9,7 @@ import {
   ExplanationText,
   ContentWrapper,
 } from "../../styles/home/goodReason/goodReason.style";
+import { IllustrationWrapper } from "../../styles/home/Illustration";
 
 export default function GoodReasonSection() {
   return (
@@ -28,6 +29,9 @@ export default function GoodReasonSection() {
         </TextWrapper>
         <GoodReasonCard />
       </ContentWrapper>
+      <IllustrationWrapper>
+        <img src={illustration} alt="Illustration" />
+      </IllustrationWrapper>
     </GoodReasonSectionWrapper>
   );
 }

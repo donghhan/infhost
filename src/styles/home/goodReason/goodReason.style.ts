@@ -5,7 +5,11 @@ const GoodReasonSectionWrapper = styled.section`
   ${breakpoint.mobileS`
     flex-direction: column;
     text-align: center;
-    padding: 150px 5% 400px;
+    padding: 150px 5% 150px;
+  `}
+
+  ${breakpoint.mobileL`
+    padding: 150px 5% 200px;
   `}
 
   ${breakpoint.laptop`
@@ -22,6 +26,7 @@ const GoodReasonSectionWrapper = styled.section`
   justify-content: center;
   align-items: center;
   gap: 90px;
+  position: relative;
 `;
 
 const ImageWrapper = styled.div`
