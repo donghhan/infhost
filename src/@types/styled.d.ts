@@ -17,6 +17,7 @@ declare module "styled-components" {
       lightPurple: string;
       lightgray: string;
       ghostWhite: string;
+      lightOrange: string;
     };
   }
 }
