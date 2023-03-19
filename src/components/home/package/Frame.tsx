@@ -71,6 +71,10 @@ const miscellaneous = [
 ];
 
 const PackageContent = styled.div`
+  ${breakpoint.mobileS`
+    font-size: 12px;  
+  `}
+
   color: ${(props) => props.theme.colors.gray};
 
   .package-name {
@@ -95,12 +99,20 @@ const PackageContent = styled.div`
       color: ${(props) => props.theme.colors.black};
 
       .main-price {
+        ${breakpoint.mobileS`
+          font-size: 30px;
+        `}
+
         font-size: 48px;
         font-weight: 500;
         margin-right: 15px;
       }
 
       .discounted-price {
+        ${breakpoint.mobileS`
+          font-size: 12px;
+        `}
+
         font-size: 16px;
       }
     }
@@ -218,7 +230,7 @@ export default function Frame({ type }: FrameProp) {
               </ul>
               <Button
                 text="Check the offer"
-                style={{ width: "100%", height: "60px", marginTop: "30px" }}
+                style={{ width: "100%", marginTop: "30px" }}
               />
             </PackageContent>
           </ContentBox>

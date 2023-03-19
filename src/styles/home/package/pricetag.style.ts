@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoint } from "../../global/breakpoints";
 
 const PriceTag = styled.div`
   background-color: ${(props) => props.theme.colors.lightOrange};
@@ -23,6 +24,9 @@ const PriceTag = styled.div`
   }
 
   span {
+    ${breakpoint.mobileS`
+      font-size: 10px;
+    `}
     text-transform: uppercase;
     color: ${(props) => props.theme.colors.orange};
     font-size: 14px;
