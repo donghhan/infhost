@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { breakpoint } from "../../styles/global/breakpoints";
 
 interface ButtonStyleProp {
@@ -10,7 +11,7 @@ interface ButtonProp extends ButtonStyleProp {
   style?: React.CSSProperties;
 }
 
-const StyledButton = styled.button<ButtonStyleProp>`
+const StyledLink = styled(Link)<ButtonStyleProp>`
   ${breakpoint.mobileS`
     height: 45px;
     font-size: 13.5px;
@@ -21,6 +22,9 @@ const StyledButton = styled.button<ButtonStyleProp>`
     font-size: 16px;
   `}
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: ${({ buttonType }) =>
     buttonType === "fitContent" ? "fit-content" : "100%"};
   background-color: ${(props) => props.theme.colors.blue};
@@ -33,8 +37,8 @@ const StyledButton = styled.button<ButtonStyleProp>`
 
 export default function Button({ text, style, buttonType }: ButtonProp) {
   return (
-    <StyledButton buttonType={buttonType} style={style}>
+    <StyledLink to="/" buttonType={buttonType} style={style}>
       {text}
-    </StyledButton>
+    </StyledLink>
   );
 }

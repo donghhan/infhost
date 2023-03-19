@@ -230,7 +230,8 @@ export default function Frame({ type }: FrameProp) {
               </ul>
               <Button
                 text="Check the offer"
-                style={{ width: "100%", marginTop: "30px" }}
+                buttonType="tableWithin"
+                style={{ marginTop: "30px" }}
               />
             </PackageContent>
           </ContentBox>
