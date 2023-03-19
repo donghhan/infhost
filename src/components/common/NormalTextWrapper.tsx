@@ -22,7 +22,7 @@ const NormalTextSection = styled.section`
   `}
 
   ${breakpoint.tablet`
-    padding: 100px 0;
+    padding: 100px 5%;
   `}
 
   ${breakpoint.laptop`
@@ -86,7 +86,7 @@ const Text = styled.span`
 `;
 
 const Illustration = styled.img`
-  width: 100%;
+  max-width: 80%;
 `;
 
 export default function NormalTextWrapper({
