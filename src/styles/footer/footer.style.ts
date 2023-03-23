@@ -15,10 +15,18 @@ const FooterContentWrapper = styled.div``;
 const MenuContainer = styled.div`
   display: flex;
   ul {
+    min-width: 200px;
+    gap: 30px;
+
     .menu-title {
+      text-transform: uppercase;
+      color: ${(props) => props.theme.colors.gray};
+      font-weight: 600;
+      margin-bottom: 15px;
     }
 
     li {
+      gap: 12px;
     }
   }
 `;

@@ -1,4 +1,5 @@
 import { breakpoint } from "../../styles/global/breakpoints";
+import FooterCard from "./FooterCard";
 import {
   FooterSection,
   FooterContentWrapper,
@@ -16,6 +17,7 @@ export default function Footer() {
   return (
     <FooterSection>
       <FooterContentWrapper>
+        <FooterCard />
         <MenuContainer>
           <ul>
             <span className="menu-title">product</span>
